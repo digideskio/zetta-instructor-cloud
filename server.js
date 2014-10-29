@@ -28,5 +28,5 @@ zetta()
     });
 
   })
-  .listen(3000);
+  .listen(process.env.PORT || 3000);
 
