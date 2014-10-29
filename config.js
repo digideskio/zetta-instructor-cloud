@@ -1,6 +1,6 @@
 var config = {
   organization: 'dobson',
-  uri: 'http://dobson-test.apigee.net/a127-starter',
+  uri: 'http://dobson-test.apigee.net/apigee-remote-proxy',
   user: process.env.APIGEE_USER,
   password: process.env.APIGEE_PASSWORD,
   key: process.env.CONSUMER_KEY,
