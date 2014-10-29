@@ -16,7 +16,7 @@ zetta()
           callback(err);
         });
       };
-      securitySystem.on('alarm', function() {
+      securitySystem.on('start-alarm', function() {
         async.times(3, function(n, next) {
           blinkAndWait(next);
         }, function(err) {
