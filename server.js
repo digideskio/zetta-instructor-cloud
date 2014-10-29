@@ -8,7 +8,7 @@ zetta()
   .use(OAuthExtension(config))
   .use(function(server) {
     var mattsSecurityQuery = server.from('matt.dobson').where({ type: 'security-system' });
-    var detroitHubQuery = server.from('detroit').where({ type: 'huehub' });
+    var detroitHubQuery = server.from('Detroit').where({ type: 'huehub' });
 
     server.observe([mattsSecurityQuery, detroitHubQuery], function(securitySystem, detroitHub) {
       var blinkAndWait = function(callback) {
