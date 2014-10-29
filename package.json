@@ -8,7 +8,8 @@
     "volos-oauth-apigee": "~0.10.3",
     "volos-management-apigee": "~0.9.6",
     "zetta": "~0.15.0",
-    "zetta-volos-oauth": "~0.1.0"
+    "zetta-volos-oauth": "~0.1.0",
+    "usergrid": "^0.10.7"
   },
   "devDependencies": {},
   "scripts": {
