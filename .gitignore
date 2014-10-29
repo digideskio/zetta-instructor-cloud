@@ -2,3 +2,5 @@ env.sh
 node_modules
 npm-debug.log
 .DS_Store
+.peers
+.registry
