@@ -1,3 +1,10 @@
+var usergrid = require('usergrid');
+
+var ug = new usergrid.client({
+  orgName: 'dobson',
+  appName: 'sandbox'
+});
+
 var config = {
   organization: 'dobson',
   uri: 'http://dobson-test.apigee.net/apigee-remote-proxy',
@@ -5,12 +12,18 @@ var config = {
   password: process.env.APIGEE_PASSWORD,
   key: process.env.CONSUMER_KEY,
   secret: process.env.CONSUMER_SECRET,
-  validGrantTypes: [ 'client_credentials' ],
+  validGrantTypes: [ 'client_credentials', 'authorization_code', 'implicit_grant', 'password' ],
   passwordCheck: checkPassword
 };
 
 function checkPassword(username, password, cb){
-  return cb(null, true);
+  ug.login(username, password, function(err, data, user) {
+    if(err) {
+      cb(err);
+    } else {
+      cb(null, true);
+    }
+  });
 }
 
 var Management = require('volos-management-apigee');
