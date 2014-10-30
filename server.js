@@ -9,7 +9,7 @@ zetta()
   .use(function(server) {
     
     var mattsSecurityQuery = server.from('matt.dobson').where({ type: 'security-system' });
-    var detroitScreenQuery = server.from('Detroit').where({ type: 'screen' });
+    var detroitScreenQuery = server.from('Detroit').where({ type: 'display' });
 
     server.observe([mattsSecurityQuery, detroitScreenQuery], function(securitySystem, detroitScreen) {
       server.log('Queries fulfilled.');
