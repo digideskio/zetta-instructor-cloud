@@ -7,10 +7,12 @@ zetta()
   .name('query.cloud')
 //  .use(OAuthExtension(config))
   .use(function(server) {
+    
     var mattsSecurityQuery = server.from('matt.dobson').where({ type: 'security-system' });
     var detroitScreenQuery = server.from('Detroit').where({ type: 'screen' });
 
     server.observe([mattsSecurityQuery, detroitScreenQuery], function(securitySystem, detroitScreen) {
+      server.log('Queries fulfilled.');
       var blinkAndWait = function(callback) {
         detroitScreen.call('change', 'Alert! Intruder at home!', function(err) {
           callback(err);
