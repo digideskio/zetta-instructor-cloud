@@ -19,6 +19,7 @@ zetta()
         });
       };
       securitySystem.on('start-alarm', function() {
+        console.log('Alarm started');
         async.times(3, function(n, next) {
           blinkAndWait(next);
         }, function(err) {
