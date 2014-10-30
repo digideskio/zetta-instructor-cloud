@@ -1,7 +1,7 @@
 var zetta = require('zetta');
 var async = require('async');
-var OAuthExtension = require('zetta-volos-oauth');
-var config = require('./config');
+//var OAuthExtension = require('zetta-volos-oauth');
+//var config = require('./config');
 
 zetta()
   .name('query.cloud')
