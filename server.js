@@ -8,11 +8,11 @@ zetta()
 //  .use(OAuthExtension(config))
   .use(function(server) {
     var mattsSecurityQuery = server.from('matt.dobson').where({ type: 'security-system' });
-    var detroitHubQuery = server.from('Detroit').where({ type: 'huehub' });
+    var detroitScreenQuery = server.from('Detroit').where({ type: 'screen' });
 
-    server.observe([mattsSecurityQuery, detroitHubQuery], function(securitySystem, detroitHub) {
+    server.observe([mattsSecurityQuery, detroitScreenQuery], function(securitySystem, detroitScreen) {
       var blinkAndWait = function(callback) {
-        detroitHub.call('blink', function(err) {
+        detroitScreen.call('change', 'Alert! Intruder at home!', function(err) {
           callback(err);
         });
       };
