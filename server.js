@@ -5,7 +5,7 @@ var config = require('./config');
 
 zetta()
   .name('query.cloud')
-  .use(OAuthExtension(config))
+//  .use(OAuthExtension(config))
   .use(function(server) {
     var mattsSecurityQuery = server.from('matt.dobson').where({ type: 'security-system' });
     var detroitHubQuery = server.from('Detroit').where({ type: 'huehub' });
