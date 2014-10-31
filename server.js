@@ -1,11 +1,11 @@
 var zetta = require('zetta');
 var async = require('async');
-//var OAuthExtension = require('zetta-volos-oauth');
-//var config = require('./config');
+var OAuthExtension = require('zetta-volos-oauth');
+var config = require('./config');
 
 zetta()
   .name('query.cloud')
-//  .use(OAuthExtension(config))
+  .use(OAuthExtension(config))
   .use(function(server) {
     
     var mattsSecurityQuery = server.from('matt.dobson').where({ type: 'security-system' });
@@ -14,7 +14,7 @@ zetta()
     server.observe([mattsSecurityQuery, detroitScreenQuery], function(securitySystem, detroitScreen) {
       server.log('Queries fulfilled.');
       var blinkAndWait = function(callback) {
-        detroitScreen.call('change', 'Alert! Intruder at home!', function(err) {
+        detroitScreen.call('change', 'Alert! Intruder!', function(err) {
           callback(err);
         });
       };
